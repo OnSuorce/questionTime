@@ -1,0 +1,29 @@
+
+@host=http://127.0.0.1:8000
+
+
+### Create new account
+POST http://127.0.0.1:8000/auth/users/
+Content-Type: application/json
+
+{
+    "username": "Giorgy",
+    "email": "giorgio@mail.it",
+    "password": "giorgiogiorgio",
+    "re_password": "giorgiogiorgio"
+}
+
+
+### Login
+
+POST http://127.0.0.1:8000/auth/token/login/
+Content-Type: application/json
+
+{
+    "username": "Giorgy",
+    "password": "giorgiogiorgio"
+}
+
+###Logout
+POST http://127.0.0.1:8000/auth/token/logout/
+Authorization: token cfb77e6a3bf8b2b45967dc556c70718a3469bd3c
