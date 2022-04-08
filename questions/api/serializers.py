@@ -1,5 +1,3 @@
-from pyexpat import model
-from aiohttp import request
 from rest_framework import serializers
 from questions.models import *
 
@@ -20,7 +18,7 @@ class QuestionSerializer(serializers.ModelSerializer):
         return instance.answers.count()
 
     def get_user_has_answered(self, instance):
-        request = self.context.get("request")
+        request = self.context.get("request")   
         return instance.answers.filter(author=request.user).exists()
 
 class AnswerSerializer(serializers.ModelSerializer):

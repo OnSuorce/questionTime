@@ -14,8 +14,10 @@
       </h2>
     </div>
     <hr>
-
+    
     <div v-if="question">
+      <AnswerBoxComponent :slug="this.slug" :user_answered="this.question.user_has_answered"></AnswerBoxComponent>
+      <hr>
       <AnswerComponent v-for="answer in answers" :key="answer.uuid" :answer="answer"/>
     </div>
     <div class="my-4">
@@ -27,9 +29,11 @@
 <script>
 import { axios } from "@/common/api.service.js";
 import AnswerComponent from "@/components/answer.vue"
+import AnswerBoxComponent from "@/components/answerBox.vue"
 export default {
   components:{
-    AnswerComponent
+    AnswerComponent,
+    AnswerBoxComponent
   },
   name: "question-view",
   props: {

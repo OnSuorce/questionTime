@@ -154,6 +154,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_PAGINATION_CLASS':'core.pagination.PageNumberPagination',
-    'PAGE_SIZE':8
+    'PAGE_SIZE':5
     ,
 }
